@@ -5,8 +5,10 @@
   <p class="fallback-text">{{ error() }}</p>
 
   } @if (places()) {
-  <app-places [places]="places()!" />
+  <app-places [places]="places()!" (selectPlace)="onRemovePlace($event)" />
   } @else if (places().length === 0) {
-  <p class="fallback-text">Unfortunately, no favourite places could be found.</p>
+  <p class="fallback-text">
+    Unfortunately, no favourite places could be found.
+  </p>
   }
 </app-places-container>
